@@ -1,4 +1,4 @@
-setwd("C:/Users/Philippis/Downloads/3. Getting and Cleaning Data/Project/UCI HAR Dataset")
+setwd("C:/Users/Project/UCI HAR Dataset")
 
 # read data into data frames
 subject_train <- read.table("train/subject_train.txt")
@@ -46,4 +46,4 @@ library(reshape2)
 temp <- melt(data, id=c("subjectID","activity"))
 tidy <- dcast(temp, subjectID+activity ~ variable, mean)
 
-write.csv(tidy, "tidy_data.txt", row.names=FALSE)
+write.csv(tidy, "tidy_data.csv", row.names=FALSE)
